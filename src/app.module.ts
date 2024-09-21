@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from './common/common.module';
+import { Products–noSpecModule } from './products–no-spec/products–no-spec.module';
 
 @Module({
   imports: [
@@ -17,6 +18,18 @@ import { CommonModule } from './common/common.module';
       synchronize: true,
     }),
     CommonModule,
+    Products–noSpecModule,
   ],
 })
 export class AppModule {}
+import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+@Entity()
+export class Product{
+  @PrimaryGeneratedColumn('uuid')
+    id: string;
+
+   @column('text', {
+    unique:true,
+   })
+
+}
