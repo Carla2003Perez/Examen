@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Products–noSpecService } from './products–no-spec.service';
+import { Products–Service } from './products–no-spec.service';
 
 describe('Products–noSpecService', () => {
   let service: Products–noSpecService;
@@ -9,7 +9,7 @@ describe('Products–noSpecService', () => {
       providers: [Products–noSpecService],
     }).compile();
 
-    service = module.get<Products–noSpecService>(Products–noSpecService);
+    service = module.get<Products–noSpecService>(Products–Service);
   });
 
   it('should be defined', () => {
